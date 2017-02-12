@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+	<title>HackMerced Bot</title>
+	<style>
+    body{
+      margin:0;
+      padding:0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    header{
+      padding:20px;
+      background-color: red;
+      background-color:#232648;
+      color:#fff;
+      font-weight: 600;
+    }
+
+    button{
+      padding: 10px;
+      border: 0px;
+      margin: 20px;
+      border-radius: 3px;
+      width: 120px;
+      cursor: pointer;
+    }
+
+    button::hover{
+      background-color: #232648;
+    }
+
+    hr{
+      margin:0px;
+    }
+  </style>
+  <script
+			  src="https://code.jquery.com/jquery-3.1.1.min.js"
+			  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			  crossorigin="anonymous"></script>
+	<script>
+
+    function changeTo(what){
+      $.ajax({
+        url: "http://192.168.137.204/mailbox/" + what,
+        type: "GET",
+        dataType: 'jsonp',
+        success: function(results){
+        },
+        error: function(results){
+        // page fails
+   		 }
+	    });
+    }
+
+	</script>
+</head>
+	<body>
+	   <header>HackMerced Iot</header>
+     <content>
+       <button onclick="changeTo('red')">Change to Red</button>
+       <button onclick="changeTo('blue')">Change to Blue</button>
+       <button onclick="changeTo('yellow')">Change to Yellow</button>
+       <hr>
+       <button onclick="changeTo('off')">Turn off</button>
+       <button onclick="changeTo('on')">Turn on</button>
+     </content>
+	</body>
+</html>
